@@ -154,7 +154,6 @@ print(sum_with_skips([2, 1, -1, 4, -1, 9]))
 
 
 def increasing(nums):
-    first = nums[0]
     previous = nums[0]-1
     for num in nums:
         if num <= previous:
@@ -176,7 +175,26 @@ print(increasing([5, 5, 6, 8, 9]))
 def is_incrementing(nums):
     previous = nums[0]-1
     for num in nums:
-        if num <= previous:
+        if num != previous + 1:
             return False
         previous = num
     return True
+
+
+
+print(is_incrementing([1, 2, 3, 4]))
+print(is_incrementing([1, 3, 5]))
+
+
+
+
+
+
+
+def has_adjacent_repeat(nums):
+    previous = nums[0]-1
+    for num in nums:
+        if num == previous:
+            return True
+        previous = num
+    return False
